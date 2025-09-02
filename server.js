@@ -25,5 +25,7 @@ app.use('/api/courses', require('./routes/courseRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 
 const PORT = process.env.PORT || 5000;
-
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "Backend is running 🚀" });
+});
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
